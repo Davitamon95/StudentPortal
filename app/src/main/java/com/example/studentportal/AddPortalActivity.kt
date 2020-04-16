@@ -18,10 +18,17 @@ class AddPortalActivity : AppCompatActivity() {
         initViews()
     }
 
+    /**
+     *initialiseren lay out start
+     */
     private fun initViews() {
         btnAdd.setOnClickListener { onAddClick() }
     }
 
+    /**
+     * methode om bij foute invoer een error message te geven en om bij juiste invoer Het toevoegen
+     * van de data af te handelen
+     */
     private fun onAddClick() {
         if (etUrl.text?.isBlank()!! || etTitle.text?.isBlank()!!) {
             createErrorMessage("Please fill in all fields")

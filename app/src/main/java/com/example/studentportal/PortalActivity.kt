@@ -32,15 +32,24 @@ class PortalActivity : AppCompatActivity() {
         initViews()
     }
 
+    /**
+     *Initialiseren start layout
+     */
+
     private fun initViews() {
         rvPortals.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         rvPortals.adapter = portalAdapter
     }
 
+    /**
+     * methode om activity te starten wanneer er result verwacht wordt
+     *
+     */
     private fun startAddActivity() {
         val intent = Intent(this, AddPortalActivity::class.java)
         startActivityForResult(intent, ADD_PORTAL_REQUEST_CODE)
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -55,16 +64,17 @@ class PortalActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * methode om items toe te voegen aan de action bar als ze er zijn
+     */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)

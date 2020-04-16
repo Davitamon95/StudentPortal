@@ -13,8 +13,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.content_portal_adapter.view.*
 
+/**
+ *class met constructor van portals uit de lijst Portal om tte koppelen aan de recyclerviw
+ */
 class PortalAdapter(private val portals: List<Portal>) : RecyclerView.Adapter<PortalAdapter.ViewHolder>() {
 
+    /**
+     *class voor binden van INVOERDATA AAN DE title en url
+     */
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(portal: Portal){
             itemView.tvTitleAdapter.text = portal.title
